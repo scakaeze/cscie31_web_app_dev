@@ -1,0 +1,23 @@
+<div *ngIf = "post">
+  <pre>
+    Author first name is {{post.firstname}} <br>
+    Author Last name is {{post.lastname}} <br>
+    Article topic is {{post.topic}} <br>
+    Article content is {{post.content}} <br> <br>
+    <a href = "/#/"> Back to home page </a><br> <br>
+  </pre>
+</div>
+
+<div>
+  <form #form = "ngForm" (ngSubmit)="updatePost(form.value)">
+    <div>
+      <label for = "topicField"> Topic: </label>
+      <input id = "topicField" name = "topic" [ngModel] = "post.topic">
+      <br>
+      <label for = "contentField"> Content: </label>
+      <input id = "contentField" name = "content" [ngModel] = "post.content">
+    </div>
+    <button type = "submit"> Update</button>
+    <button type = "button" (click) = "deletePost()"> Delete</button>
+  </form>
+</div>

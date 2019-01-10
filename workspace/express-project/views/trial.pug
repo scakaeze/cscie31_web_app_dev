@@ -1,0 +1,20 @@
+html
+  head
+    title REQUESTPAGE
+
+    script.
+      function formSubmit() {
+        document.getElementById("checker").innerHTML = document.cookie;
+      }
+  body
+    h1 I am the layout
+
+    p( id = "checker") This should change
+
+    p = document.cookie
+
+
+
+    form(name='myForm')
+      p
+        input(type='button', onclick="formSubmit()",value='change value')

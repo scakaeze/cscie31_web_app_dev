@@ -1,0 +1,36 @@
+<div>
+  <p align="center" class="main">Welcome To Wakanda Public News</p>
+  <br/>
+  <img src="https://cdn-images-1.medium.com/max/1600/0*pw9ijL8PlW1zMiBl.jpeg" height="160" width="250" border="15" class="img"/>
+  <br/>
+  <br/>
+</div>
+
+
+<div *ngIf = "post">
+  <pre>
+    Author First Name : {{post.firstname}} <br>
+    Author Last name : {{post.lastname}} <br>
+    Article topic : {{post.topic}} <br>
+    Article content : {{post.content}} <br> <br>
+    <a href = "/#/"> RETURN TO HOMEPAGE </a>
+  </pre>
+</div>
+
+<div>
+  <form #form = "ngForm" (ngSubmit)="updatePost(form.value)">
+    <p class = "formfield">
+      <label for = "topicField"> Topic  :
+        <input id = "topicField" name = "topic" [ngModel] = "post.topic" size="30">
+      </label>
+    </p>
+    <p class = "formfield">
+      <label for = "contentField"> Content:
+          <textarea id = "contentField" name = "content" [ngModel] = "post.content" rows="5" cols="120" ></textarea>
+      </label>
+    </p>
+    <br>
+    <button type = "submit" class = "button"> Update</button>
+    <button type = "button" (click) = "deletePost()" class = "button"> Delete</button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<div>
+  {{coursename}} <br><br>
+
+  The post title is {{post.topic}} <br>
+
+  <a routerLink = "/post/{{post._id}}"> Click me
+  </a>
+
+
+  <!--<button (click) = "upvote(post.title)">Upvote!</button>-->
+  <button (click) = "upvote(post.topic)">Upvote! ({{votes}})</button>
+  <br>
+  <br>
+
+
+</div>

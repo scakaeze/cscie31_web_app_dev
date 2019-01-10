@@ -1,0 +1,47 @@
+html
+  head
+    title Update Page
+
+    style.
+      body {font-family: calibri;}
+      .img{display: block;  margin-left: auto; margin-right: auto;}
+      .main{font-size: 30px; color: purple;}
+      .elements{font-size: 20px; color: purple;}
+
+
+    script.
+      function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            location.href = "/posts/wakanda";
+          }
+        };
+        xhttp.open("DELETE", '/posts/update/#{post._id}', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("fname=Henry&id=#{post._id}");
+      }
+
+
+  body
+    p(class = "main" align= "center") Welcome To Wakanda Public News
+    img(class = "img" src = "/static/img/blackPanther.jpg" height = "160" width = "250" border = "15")
+
+
+
+    form(name='myForm', id = 'myForm', method = "post")
+      p(class = "main" align= "center") Please update Title and Content as needed
+      p(class = "elements") Author First name: #{post.firstname}
+      p(class = "elements") Author last name: #{post.lastname}
+
+      | Title :
+      input(type='text', name='topic', value=post.topic, size="117")
+      p Article ID :
+        input(type='text', name='id', value=post._id, size="30", readonly='')
+
+      textarea(rows="10" cols="120" name="content" form = "myForm") #{post.content}
+      br
+      input(type='submit', value='Update News Article/Return to HomePage')
+
+      input(type='button', value='Delete News Article', onclick="loadDoc()")

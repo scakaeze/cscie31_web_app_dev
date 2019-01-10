@@ -1,0 +1,26 @@
+<div>
+  <form #newpostForm = "ngForm" (ngSubmit) = "savePost(newpostForm)">
+    <label> First name:
+      <input placeholder = "First Name"  name = "firstname" [(ngModel)] = "post.firstname" minlength="3">
+    </label>
+    <br>
+
+    <label> Last name:
+      <input placeholder = "Last Name" name = "lastname" [(ngModel)] = "post.lastname" minlength="3">
+    </label>
+    <br>
+
+    <label> Topic:
+      <input placeholder = "topic" name = "topic" [(ngModel)] = "post.topic" required minlength="3">
+    </label>
+    <br>
+
+    <label> Content:
+      <input placeholder = "Content" name = "content" [(ngModel)] = "post.content">
+    </label>
+    <br>
+
+    <button type = "submit" [disabled] = "!newpostForm.valid"> save</button>
+  </form>
+
+</div>

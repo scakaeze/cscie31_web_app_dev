@@ -1,0 +1,45 @@
+html
+  head
+    title FORM PAGE
+
+    script.
+      function formSubmit() {
+        //document.forms["myForm"].submit();
+        var done = "it happened";
+        //document.getElementById("checker").innerHTML = done;
+        document.getElementById("title").value = done;
+        document.getElementById("year").value = #{bell};
+      }
+
+      function formSubmit1() {
+        //document.forms["myForm"].submit();
+        var done = "we just reset";
+        //document.getElementById("checker").innerHTML = done;
+        document.getElementById("title").value = done;
+        document.getElementById("year").value = #{bell};
+      }
+
+  body
+    h1 I am the layout
+
+    p( id = "checker") This should change
+
+
+
+    form(name='myForm')
+      p
+        | title:
+        input(type='text', id = "title", name='title', value='')
+        |          year:
+        input(type='text', id = "year",name='year', value='')
+        |          imdb:
+        input(type='text', name='imdb', value='')
+
+        input(type='button', onclick="formSubmit()",value='change value')
+
+        input(type='button', onclick="formSubmit1()",value='reset')
+
+
+
+
+    block content

@@ -1,0 +1,24 @@
+{
+  "name": "assignment-3-express-routing-and-templates-scakaeze",
+  "version": "1.0.0",
+  "description": "Assignment 3 (Stephen Akaeze) ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "start-dev": "nodemon --inspect ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarvardDCENode/assignment-3-express-routing-and-templates-scakaeze.git"
+  },
+  "author": "Stephen Akaeze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarvardDCENode/assignment-3-express-routing-and-templates-scakaeze/issues"
+  },
+  "homepage": "https://github.com/HarvardDCENode/assignment-3-express-routing-and-templates-scakaeze#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+html
+  head
+    title HomePage
+
+  body
+    h1 WELCOME TO EGGAZON Homepage
+    h2 Please enter your easter egg order details below
+
+    form(name='myForm', id = 'myForm', action= "http://http://159.89.151.39:8080/guests/home")
+      p
+        | First Name:
+        input(type='text', id = "fname", name='first', value='')
+        | Last Name:
+        input(type='text', id = "lname",name='last', value='')
+        | Number of Eggs :
+        input(type='text', id = "amount",name='amount', value='')
+
+        input(type='submit',value='Send Request')

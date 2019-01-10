@@ -1,0 +1,28 @@
+<div>
+  <p align="center" class="main">Welcome To Wakanda Public News</p>
+  <p align="center" class="api"></p>
+  <br/>
+  <img src="https://cdn-images-1.medium.com/max/1600/0*pw9ijL8PlW1zMiBl.jpeg" height="160" width="250" border="15" class="img"/>
+  <br/>
+  <br/>
+</div>
+
+<div>
+  <table style="width:100%">
+  <caption class="main">Latest Wakanda Stories &#9836; &#9836; &#9836;</caption>
+    <tr>
+      <th>Topic</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Post Time</th>
+      <th>View Details</th>
+    </tr>
+    <tr *ngFor = 'let post of postList'>
+      <td>{{ post.topic }}</td>
+      <td>{{ post.firstname }}</td>
+      <td>{{ post.lastname }}</td>
+      <td>{{ post.postdate }}</td>
+      <td><a routerLink = "/homepage/{{post._id}}"> View/Update</a></td>
+    </tr>
+  </table>
+</div>

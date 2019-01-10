@@ -1,0 +1,165 @@
+html
+  head
+    title API Test Page
+
+    style.
+      .top{font-size: 30px; color: purple;}
+      .main{font-size: 20px; color: purple;}
+      .section{margin-left: 30px}
+
+    script.
+
+      function listReq(){
+        fetch('/api/wakanda')
+          .then(function(response) {
+            return response.text().then(function(text){
+              document.getElementById("listOutput").value = text;
+            });
+          })
+      }
+
+      function readReq(){
+        var id = document.getElementById("readID").value
+
+        fetch('/api/wakanda/' + id)
+          .then(function(response) {
+            return response.text().then(function(text){
+              document.getElementById("readOutput").value = text;
+            });
+          })
+      }
+
+      function deleteReq(){
+        var id = document.getElementById("deleteID").value
+
+        fetch('/api/wakanda/' + id, {
+          method: 'DELETE',
+          mode: 'cors',
+        })
+          .then(function(response) {
+            return response.text().then(function(text){
+              document.getElementById("deleteOutput").value = text;
+            });
+          })
+      }
+
+      function createReq(){
+
+        var data = {"firstname": document.getElementById('firstname').value,
+                    "lastname": document.getElementById('lastname').value,
+                    "topic": document.getElementById('topic').value,
+                    "content": document.getElementById('content').value};
+
+        fetch('/api/wakanda',{
+         method: 'POST',
+         body: JSON.stringify(data),
+         mode: 'cors',
+         headers: new Headers({
+           'Content-Type': 'application/json'
+           })
+         })
+         .then(function(response) {
+           return response.text().then(function(text){
+             document.getElementById("createResult").value = text;
+           });
+         });
+      }
+
+      function updateReq(){
+
+        var id = document.getElementById("updateId").value
+
+        var data = {"topic": document.getElementById('utopic').value,
+                    "content": document.getElementById('ucontent').value};
+
+        fetch('/api/wakanda/'+ id,{
+         method: 'PUT',
+         body: JSON.stringify(data),
+         mode: 'cors',
+         headers: new Headers({
+           'Content-Type': 'application/json'
+           })
+         })
+         .then(function(response) {
+           return response.text().then(function(text){
+             document.getElementById("updateResult").value = text;
+           });
+         });
+      }
+
+
+
+
+
+
+
+  body
+    p(align= "center" class = "top") Welcome To Wakanda REST API Test Page
+
+    div(class = "section")
+      p(class = "main") LIST OUTPUT
+        br
+        textarea(rows="10" cols="150" id = "listOutput" readonly)
+        br
+        input(type='button', value='Show List' , onclick="listReq()")
+        br
+        br
+
+
+    div(class = "section")
+      p(class = "main") READ OUTPUT
+        br
+        textarea(rows="10" cols="150" id = "readOutput" readonly)
+        br
+        input(type='text', name='topic', id = 'readID' placeholder="Enter Post ID", size="40")
+        input(type='button', value='Show Read Post' , onclick="readReq()")
+        br
+        br
+
+
+
+    div(class = "section")
+      p(class = "main") DELETE OUTPUT
+        br
+        textarea(rows="10" cols="150" id = "deleteOutput" readonly)
+        br
+        input(type='text', name='topic', id = 'deleteID' placeholder="Enter Post ID to Delete", size="40")
+        input(type='button', value='Delete Post' , onclick="deleteReq()")
+        br
+        br
+        br
+
+
+
+    div(class = "section")
+      p(class = "main") CREATE POST
+        form(name='myForm', id = 'createForm', method = "post")
+          | First name(required):
+          input(type='text', id = 'firstname', value='')
+          |   Last name(required):
+          input(type='text', id='lastname', value='')
+          |   Topic(required):
+          input(type='text', id='topic', value='', size="80")
+
+        textarea(rows="10" cols="148" id="content" placeholder="ENTER NEW CONTENT" onfocus="this.value=''")
+        textarea(rows="10" cols="148" id="createResult" placeholder="CREATE RESULT" readonly)
+        input(type='button', value='Submit News Article',  onclick="createReq()")
+        br
+        br
+        br
+
+
+    div(class = "section")
+      p(class = "main") UPDATE POST
+        form(name='myForm', id = 'updateForm', method = "post")
+          |   Post ID:
+          input(type='text', id='updateId', value='', size="40")
+          |   Topic:
+          input(type='text', id='utopic', value='', size="80")
+
+        textarea(rows="10" cols="148" id="ucontent" placeholder="ENTER CONTENT UPDATE" onfocus="this.value=''")
+        textarea(rows="10" cols="148" id="updateResult" placeholder="UPDATE RESULT" readonly)
+        input(type='button', value='Submit News Article',  onclick="updateReq()")
+        br
+        br
+        br

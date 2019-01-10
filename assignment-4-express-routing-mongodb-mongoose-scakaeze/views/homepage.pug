@@ -1,0 +1,61 @@
+html
+  head
+    title HomePage
+
+    style.
+      body {font-family: calibri;}
+      .img{display: block;  margin-left: auto; margin-right: auto;}
+      .main{font-size: 30px; color: purple;}
+      .top{color: purple;}
+        th {text-align: left; padding: 5px;}
+        td {text-align: left; padding: 5px;}
+
+    script.
+      function clearContents(element) {
+        element.value = '';
+      }
+
+
+
+  body
+    p(class = "main" align= "center") Welcome To Wakanda Public News
+    br
+    img(class = "img" src = "/static/img/blackPanther.jpg" height = "160" width = "250" border = "15")
+
+    br
+    br
+
+    table(style='width:100%')
+      caption(class = "main") Latest Wakanda Stories &#9836; &#9836; &#9836;
+      tr
+        th Topic
+        th First Name
+        th Last Name
+        th Post Time
+        th View details/Update
+        th Delete
+
+      each post in posts
+        tr
+          td #{post.topic}
+          td #{post.postfname}
+          td #{post.postlname}
+          td #{post.postdate}
+          td
+            a(href = '/posts/update/'+ post._id) View Details/Update
+          td
+            a(href = '/posts/delete/'+ post.topic) Trash
+
+    form(name='myForm', id = 'myForm', method = "post")
+      p(class = "main" align= "center") Please support our community with the latest News
+      | First name:
+      input(type='text', name='firstname', value='')
+      |   Last name:
+      input(type='text', name='lastname', value='')
+      |   Topic:
+      input(type='text', name='topic', value='', size="80")
+      br
+      br
+      textarea(rows="10" cols="148" name="content" form = "myForm" onfocus= "clearContents(this)") Enter story here.....
+      br
+      input(type='submit', value='Submit News Article')

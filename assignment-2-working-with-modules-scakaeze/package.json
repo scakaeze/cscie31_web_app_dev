@@ -1,0 +1,22 @@
+{
+  "name": "assignment-2-working-with-modules-scakaeze",
+  "version": "1.0.0",
+  "description": "Assignment 2 package for Stephen Akaeze",
+  "main": "simple-http-file-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarvardDCENode/assignment-2-working-with-modules-scakaeze.git"
+  },
+  "author": "Stephen Akaeze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarvardDCENode/assignment-2-working-with-modules-scakaeze/issues"
+  },
+  "homepage": "https://github.com/HarvardDCENode/assignment-2-working-with-modules-scakaeze#readme",
+  "dependencies": {
+    "util": "^0.10.3"
+  }
+}

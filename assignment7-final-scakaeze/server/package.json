@@ -1,0 +1,27 @@
+{
+  "name": "assignment-5-rest-apis-scakaeze",
+  "version": "1.0.0",
+  "description": "Assignment 5 for Stephen Akaeze",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "start-dev": "nodemon --inspect ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarvardDCENode/assignment-5-rest-apis-scakaeze.git"
+  },
+  "author": "Stephen Akaeze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarvardDCENode/assignment-5-rest-apis-scakaeze/issues"
+  },
+  "homepage": "https://github.com/HarvardDCENode/assignment-5-rest-apis-scakaeze#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.14",
+    "pug": "^2.0.3"
+  }
+}

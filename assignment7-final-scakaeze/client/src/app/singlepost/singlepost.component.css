@@ -1,0 +1,18 @@
+body {font-family: calibri;}
+.img{display: block;  margin-left: auto; margin-right: auto;}
+.main{font-size: 30px; color: purple;}
+.api{font-size: 30px;}
+.top{color: purple;}
+th {text-align: left; padding: 5px;}
+td {text-align: left; padding: 5px;}
+
+.button {
+    background-color: purple; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

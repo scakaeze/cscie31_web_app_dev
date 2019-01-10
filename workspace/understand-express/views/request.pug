@@ -1,0 +1,24 @@
+html
+  head
+    title RequestPage
+
+    script.
+
+      /**
+        extracts order message from cookie and presents result
+      */
+      function formSubmit() {
+        document.getElementById("checker").innerHTML = document.cookie;
+        document.cookie = "Order Details=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+      }
+  body
+
+    h1 WELCOME TO EGGAZON Order page
+
+    h4 The last EGGAZON request is displayed below
+
+    p( id = "checker")
+
+    form(name='myForm')
+      p
+        input(type='button', onclick="formSubmit()",value='click to view latest request')

@@ -1,0 +1,28 @@
+<h4> Angular Primary Page</h4>
+
+<pre>
+  Course Name:  {{coursename}}
+
+  Total Votes: {{totalVotes}}.
+
+  Last Voted: {{mostRecentVotedOn}}
+</pre>
+
+
+<h4> Post Component Loading Below</h4>
+
+<app-post
+  [coursename] = "coursename"
+
+  *ngFor = 'let postObject of postList'
+  [post] = "postObject"
+
+  (upvotedEvent) = "handleUpvoted($event)"
+
+
+> Hi I am Stephen Akaeze>
+</app-post>
+
+<app-newpost
+  (newPost) = "updatePostList()">
+</app-newpost>
