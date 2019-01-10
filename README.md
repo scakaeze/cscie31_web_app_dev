@@ -1,3 +1,3 @@
-# Reference Directory for CSCI-E31
+# Reference Repo for CSCI-E31
 - workspace has some good resource as well
 
