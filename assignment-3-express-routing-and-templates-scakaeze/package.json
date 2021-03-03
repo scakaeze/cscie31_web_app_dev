@@ -19,6 +19,6 @@
   "homepage": "https://github.com/HarvardDCENode/assignment-3-express-routing-and-templates-scakaeze#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "pug": "^2.0.0"
+    "pug": "^3.0.1"
   }
 }
