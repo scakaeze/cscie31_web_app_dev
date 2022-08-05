@@ -23,7 +23,7 @@
     "express": "^4.16.3",
     "express-flash": "0.0.2",
     "express-session": "^1.15.6",
-    "mongoose": "^5.0.12",
+    "mongoose": "^5.7.5",
     "pug": "^2.0.3",
     "session": "^0.1.0"
   }
